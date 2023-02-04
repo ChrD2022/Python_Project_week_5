@@ -78,4 +78,5 @@ def products(manufacturer):
             row['manufacturer_id'],
             row['id']
             )
-
+        products.append(product)
+    return products
