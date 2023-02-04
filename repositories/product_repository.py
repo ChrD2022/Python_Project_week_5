@@ -19,7 +19,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        manufacturer = manufacturer_repository.select(row['manufacturer_id'])
+        manufacturer = manufacturer_repository.select(int(row['manufacturer_id']))
         product = Product(
             row['product_name'],
             row['product_description'],

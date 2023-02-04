@@ -1,4 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
-MANUFACTURER PAGE CONTENT
+<h1>MANUFACTURERS:</h1>
+
+{% for manufacturer in all_manufacturers %}
+
+<div class="manufacturer">
+    <div>
+        Company:<br>
+        <a href="/manufacturers/{{manufacturer.id}}">{{ manufacturer.manufacturer_name }}</a><br>
+        HQ:<br>
+        {{ manufacturer.manufacturer_location }}<br>
+        <div class="button">
+            <form class="delete" action="/manufacturers/{{manufacturer.id}}/delete" method="post">
+                <button>DELETE</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+
 {% endblock %}

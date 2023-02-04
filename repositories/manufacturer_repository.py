@@ -31,9 +31,9 @@ def select_all():
 
 def select(id):
     manufacturer = None
-    sql = "SELECT* FROM manufacturers WHERE id = %s"
+    sql = "SELECT * FROM manufacturers WHERE id = %s"
     values = [id]
-    result = run_sql(sql, values)
+    result = run_sql(sql, values)[0]
 
     if result is not None:
         manufacturer = Manufacturer(
@@ -47,8 +47,8 @@ def delete_all():
     sql = "DELETE FROM manufacturers"
     run_sql(sql)
 
-def delete_id(id):
-    sql = "DELETE FROM manufacturers WHERE id = %s"
+def delete(id):
+    sql = "DELETE  FROM manufacturers WHERE id = %s"
     values = [id]
     run_sql(sql, values)
 
