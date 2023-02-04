@@ -1,0 +1,12 @@
+body > footer {
+    text-align: center;
+    padding: 1em;
+}
+
+body > main > nav > ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    padding: 1em;
+}

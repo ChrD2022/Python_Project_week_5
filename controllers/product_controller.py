@@ -17,3 +17,10 @@ def products():
 def show_product(id):
     product = product_repository.select(id)
     return render_template("products/show.html", product = product)
+
+@product_blueprint.route("/products/new")
+def new_product():
+    products = product_repository.select_all()
+    return render_template("products/new.html", products = products)
+
+
