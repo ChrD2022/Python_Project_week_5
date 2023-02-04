@@ -11,7 +11,7 @@ CREATE TABLE products (
     id SERIAL PRIMARY KEY,
     product_name VARCHAR(255),
     product_description TEXT,
-    stock_level INT,
+    in_stock INT,
     buy_cost INT,
     sell_cost INT,
     manufacturer_id INT NOT NULL REFERENCES manufacturers(id)
