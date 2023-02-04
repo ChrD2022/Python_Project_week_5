@@ -7,4 +7,3 @@ from flask import Blueprint
 
 product_blueprint = ("products", __name__)
 
-@

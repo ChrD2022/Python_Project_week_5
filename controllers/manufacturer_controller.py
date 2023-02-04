@@ -7,4 +7,7 @@ from flask import Blueprint
 
 manufacturer_blueprint = Blueprint("manufacturers", __name__)
 
-@manufacturer_blueprint.route
+@manufacturer_blueprint.route("/manufacturers")
+def manufacturers():
+    manufacturers = manufacturer_repository.select_all()
+    return render_template("manufacturers/index.html", all_manufacturers = manufacturers)
