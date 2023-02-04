@@ -31,5 +31,25 @@ def select_all():
         products.append(product)
     return products
 
+def select(id):
+    product = None
+    sql = "SELECT * FROM products WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        manufacturer = manufacturer_repository.select[result['manufacturer_id']]
+        product = Product(
+            result['product_name'],
+            result['product_description'],
+            result['in_stock'],
+            result['buy_cost'],
+            result['sell_cost'],
+            manufacturer
+            )
+    return product
+
+    
+
 
 
