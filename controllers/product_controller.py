@@ -35,3 +35,14 @@ def create_new_product():
     product = Product(product_name, product_description, in_stock, buy_cost, sell_cost, manufacturer)
     product_repository.save(product)
     return redirect('/products')
+
+@product_blueprint.route("/products/<id>/delete", methods=['POST'])
+def delete_product(id):
+    product_repository.delete(id)
+    return redirect('/products')
+
+@product_blueprint.route("/products/<id>/edit")
+def edit_product(id):
+    product = product_repository.select(id)
+    manufacturer = manufacturer_repository.select_all()
+    return render_template("products/edit.html")

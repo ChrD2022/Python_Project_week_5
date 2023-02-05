@@ -7,7 +7,7 @@
 <div class="product">
     <div>
         Product:<br>
-        <a href="/products/{{product.id}}">{{product.product_name}}</a><br>
+        {{product.product_name}}<br>
         Description:<br>
         {{product.product_description}}<br>
         Manufacturer:<br>
@@ -16,6 +16,12 @@
         Buy in cost: {{product.buy_cost}} Credits<br>
         Selling price: {{product.sell_cost}} Credits<br>
         <div class="button">
+            <form class="detaild" action="/products/{{product.id}}">
+                <button>DETAILS</button>
+            </form>
+            <form class="edit" action="/products/{{product.id}}/edit" method="get">
+                <button>EDIT</button>
+            </form>
             <form class="delete" action="/products/{{product.id}}/delete" method="post">
                 <button>DELETE</button>
             </form>
