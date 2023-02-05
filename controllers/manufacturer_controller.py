@@ -45,5 +45,5 @@ def update_manufacturer(id):
     manufacturer_name = request.form['manufacturer_name']
     manufacturer_location = request.form['manufacturer_location']
     manufacturer = Manufacturer(manufacturer_name, manufacturer_location, id)
-    manufacturer_repository.save(manufacturer)
+    manufacturer_repository.update(manufacturer)
     return redirect('/manufacturers')
