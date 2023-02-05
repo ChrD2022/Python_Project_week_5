@@ -17,6 +17,11 @@ def show_manufacturer(id):
     manufacturer = manufacturer_repository.select(id)
     return render_template("manufacturers/show.html", manufacturer=manufacturer)
 
+@manufacturer_blueprint.route("/manufacturers/new")
+def new_manufacturer():
+    manufacturers = manufacturer_repository.select_all()
+    return render_template("/manufacturers/new.html", manufacturers = manufacturers)
+
 
 @manufacturer_blueprint.route("/manufacturers/<id>/delete", methods=['POST'])
 def delete_manufacturer(id):
