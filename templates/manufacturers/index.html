@@ -10,16 +10,20 @@
         {{ manufacturer.manufacturer_name }}<br>
         HQ:<br>
         {{ manufacturer.manufacturer_location }}<br>
+        <div class="button">
+
         <form class="detaild" action="/manufacturers/{{manufacturer.id}}">
             <button>DETAILS</button>
         </form>
+
         <form class="edit" action="/manufacturers/{{manufacturer.id}}/edit" method="get">
             <button>EDIT</button>
-        <div class="button">
-            <form class="delete" action="/manufacturers/{{manufacturer.id}}/delete" method="post">
-                <button>DELETE</button>
-            </form>
-            <hr>
+        </form>
+
+        <form class="delete" action="/manufacturers/{{manufacturer.id}}/delete" method="post">
+            <button>DELETE</button>
+        </form>
+        <hr>
         </div>
     </div>
 </div>
