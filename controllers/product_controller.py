@@ -45,4 +45,17 @@ def delete_product(id):
 def edit_product(id):
     product = product_repository.select(id)
     manufacturer = manufacturer_repository.select_all()
-    return render_template("products/edit.html")
+    return render_template("products/edit.html", product=product, all_manufacturers=manufacturer)
+
+@product_blueprint.route("/products/<id>", methods=['POST'])
+def update_product(id):
+    product_name = request.form['product_name']
+    product_description = request.form['product_description']
+    in_stock = request.form['in_stock']
+    buy_cost = request.form['buy_cost']
+    sell_cost = request.form['sell_cost']
+    manufacturer_id = request.form['manufacturer_id']
+    manufacturer = manufacturer_repository.select(manufacturer_id)
+    product = Product(product_name, product_description, in_stock, buy_cost, sell_cost, manufacturer, id)
+    product_repository.update(product)
+    return redirect('/products')

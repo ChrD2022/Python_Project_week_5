@@ -2,8 +2,43 @@
 
 {% block content %}
 
-<form>
+<form action="/products/{{product.id}}" method="post">
+    <div>
+        <label for="product_name">Product Name:</label>
+        <input type="text" id="product_name" value="{{product.product_name}}" name="product_name" placeholder="Product Name" required autofocus>
+    </div>
+
+    <div>
+        <label for="product_description">Product Description:</label>
+        <input type="text" id="product_description" value="{{product.product_description}}" name="product_description" placeholder="Product Description" required>
+    </div>
     
+    <div>
+        <label for="in_stock">Stock Level:</label>
+        <input type="number" id="in_stock" value="{{product.in_stock}}" name="in_stock" placeholder="Stock Level" required>
+    </div>
+
+    <div>
+        <label for="buy_cost">Buy Cost:</label>
+        <input type="number" id="buy_cost" value="{{product.buy_cost}}" name="buy_cost" placeholder="Buy Cost" required>
+    </div>
+
+    <div>
+        <label for="sell_cost">Sell Price:</label>
+        <input type="number" id="sell_cost" value="{{product.sell_cost}}" name="sell_cost" placeholder="Sell Cost" required>
+    </div>
+
+    <div>
+        <label for="manufacturer">Manufacturer:</label>
+        <select id="manufacturer" name="manufacturer_id">
+        {% for manufacturer in all_manufacturers %}
+            <option value="{{manufacturer.id}}"
+            {% if product.manufacturer.manufacturer_name == manufacturer.manufacturer_name %} selected="selected" {% endif %}>{{manufacturer.manufacturer_name}}</option>
+        {% endfor %}
+        </select>
+    </div>
+    <button type="submit">Save</button>
+
 </form>
 
 {% endblock %}
