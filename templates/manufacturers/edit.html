@@ -1,18 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<div class="content">
 <form action="/manufacturers/{{manufacturer.id}}" method="post">
     
     <div>
-        <label for="manufacturer_name">Manufacturer Name:</label>
+        <label for="manufacturer_name"><u>Manufacturer Name:</u></label>
         <input type="text" id="manufacturer_name" value="{{manufacturer.manufacturer_name}}" name="manufacturer_name" placeholder="Manufacturer Name" required autofocus>
     </div>
     <div>
-        <label for="manufacturer_location">Manufacturer Location:</label>
+        <label for="manufacturer_location"><u>Manufacturer Location:</u></label>
         <input type="text" id="manufacturer_location" value="{{manufacturer.manufacturer_location}}" name="manufacturer_location" placeholder="Manufacturer Location" required>
     </div>
-    <button type="submit">Save</button>
+    <button class="button" type="submit">Save</button>
 </form>
-
+</div>
 {% endblock %}

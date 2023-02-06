@@ -1,26 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<div class="product">
-    <div>
-        Product:<br>
-        {{product.product_name}}<br>
-        Description:<br>
-        {{product.product_description}}<br>
-        Manufacturer:<br>
-        {{product.manufacturer.manufacturer_name}}<br>
-        In stock: {{product.in_stock}}<br>
-        Buy in cost: {{product.buy_cost}} Credits<br>
-        Selling price: {{product.sell_cost}} Credits<br>
-        
-        <div class="button">
+    <div class="container">
+        <div>
+            <u>Product:</u><br>
+            {{product.product_name}}<br>
+            <u>Description:</u><br>
+            {{product.product_description}}<br>
+            <u>Manufacturer:</u><br>
+            {{product.manufacturer.manufacturer_name}}<br>
+            <u>In stock:</u> {{product.in_stock}}<br>
+            <u>Buy in cost:</u> {{product.buy_cost}} Credits<br>
+            <u>Selling price:</u> {{product.sell_cost}} Credits<br>
+        <div class="button-box">
+            <form action="/products/{{product.id}}/edit" method="get">
+                <button class="button">EDIT</button>
+            </form>
             <form class="delete" action="/products/{{product.id}}/delete" method="post">
-                <button>DELETE</button>
+                <button class="button">DELETE</button>
             </form>
         </div>
-        <hr>
     </div>
-</div>
-
 {% endblock %}

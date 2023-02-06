@@ -1,17 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="container">
+    <form action="/manufacturers" method="post">
+        <div>
+            <label for="manufacturer_name"><u>Manufacturer Name:</u></label>
+            <input type="text" id="manufacturer_name" name="manufacturer_name" placeholder="Manufacturer Name" required autofocus>
+        </div>
 
-<form action="/manufacturers" method="post">
-    <div>
-        <label for="manufacturer_name">Manufacturer Name:</label>
-        <input type="text" id="manufacturer_name" name="manufacturer_name" placeholder="Manufacturer Name" required autofocus>
-    </div>
-
-    <div>
-        <label for="manufacturer_location">Manufacturer Location:</label>
-        <input type="text" id="manufacturer_location" name="manufacturer_location" placeholder="Manufacturer Location" required>
-    </div>
-    <button type="submit">Add Manufacturer</button>
-</form>
+        <div>
+            <label for="manufacturer_location"><u>Manufacturer Location:</label>
+            <input type="text" id="manufacturer_location" name="manufacturer_location" placeholder="Manufacturer Location" required>
+        </div>
+        <button class="button" type="submit">Add Manufacturer</button>
+    </form>
+</div>
 {% endblock %}

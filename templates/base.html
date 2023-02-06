@@ -6,32 +6,33 @@
 </head>
 <body>
     <main>
+        <h1 class="title"><b>Watto's Junk Emporium - <u>"GET BACK TO WORK!"</u></b></h1><hr>
         <nav>
             <ul>
                 <li>
-                    <a href="/">Home</a>
+                    <a class="nav-list" href="/">Home</a>
                 </li>
                 <li>
-                    <a href="/products">Products</a>
+                    <a class="nav-list" href="/products">Products</a>
                 </li>
                 <li>
-                    <a href="/products/new">Add New Product</a>
+                    <a class="nav-list" href="/products/new">Add New Product</a>
                 </li>
                 <li>
-                    <a href="/manufacturers">Manufacturers</a>
+                    <a class="nav-list" href="/manufacturers">Manufacturers</a>
                 </li>
                 <li>
-                    <a href="/manufacturers/new">Add New Manufacturer</a>
+                    <a class="nav-list" href="/manufacturers/new">Add New Manufacturer</a>
                 </li>
             </ul>
         </nav>
         <hr>
         <section>
             {% block content %}
-
             {% endblock %}
         </section>
     </main>
 </body>
-<footer>Watto's Junk Emporium - "GET BACK TO WORK!"</footer>
+<hr>
+<footer>Watto's Junk Emporium - <u>"GET BACK TO WORK!"</u></footer>
 </html>

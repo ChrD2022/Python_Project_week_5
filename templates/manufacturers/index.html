@@ -1,33 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>MANUFACTURERS:</h1>
-
+<h1><u>MANUFACTURERS:</u></h1>
+<div class="container">
 {% for manufacturer in all_manufacturers %}
-
-<div class="manufacturer">
     <div>
-        Company:<br>
+        <u>Company:</u><br>
         {{ manufacturer.manufacturer_name }}<br>
-        HQ:<br>
+        <u>HQ:</u><br>
         {{ manufacturer.manufacturer_location }}<br>
-        <div class="button">
-
-        <form class="detaild" action="/manufacturers/{{manufacturer.id}}">
-            <button>DETAILS</button>
+        <div class="button-box">
+        <form action="/manufacturers/{{manufacturer.id}}">
+            <button class="button">DETAILS</button>
         </form>
-
-        <form class="edit" action="/manufacturers/{{manufacturer.id}}/edit" method="get">
-            <button>EDIT</button>
+        <form action="/manufacturers/{{manufacturer.id}}/edit" method="get">
+            <button class="button">EDIT</button>
         </form>
-
-        <form class="delete" action="/manufacturers/{{manufacturer.id}}/delete" method="post">
-            <button>DELETE</button>
+        <form action="/manufacturers/{{manufacturer.id}}/delete" method="post">
+            <button class="button">DELETE</button>
         </form>
-        <hr>
         </div>
     </div>
-</div>
-
 {% endfor %}
-
+</div>
 {% endblock %}
