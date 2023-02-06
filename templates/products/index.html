@@ -12,7 +12,16 @@
         {{product.product_description}}<br>
         Manufacturer:<br>
         {{product.manufacturer.manufacturer_name}}<br>
-        In stock: {{product.in_stock}}<br>
+        <div class="stock">
+            <form>
+                In stock: {{product.in_stock}} 
+            </form>
+            {% if product.in_stock == 0 %} 
+                <i class="stock" style="color:red"></i>
+            {% elif product.in_stock <= 20 %}
+                <i class="stock" style="color:goldenrod"></i>
+            {% endif %}
+        </div><br>
         Buy in cost: {{product.buy_cost}} Credits<br>
         Selling price: {{product.sell_cost}} Credits<br>
         <div class="button">
