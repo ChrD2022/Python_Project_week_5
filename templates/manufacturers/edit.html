@@ -2,6 +2,7 @@
 
 {% block content %}
 <div class="content">
+<div>
 <form action="/manufacturers/{{manufacturer.id}}" method="post">
     
     <div>
@@ -14,5 +15,6 @@
     </div>
     <button class="button" type="submit">Save</button>
 </form>
+</div>
 </div>
 {% endblock %}

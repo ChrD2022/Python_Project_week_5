@@ -10,7 +10,7 @@
         {{product.product_description}}<br>
         <u>Manufacturer:</u><br>
         {{product.manufacturer.manufacturer_name}}<br>
-        <b class="stock">
+        <b>
             <form>
                 <u>In stock:</u> {{product.in_stock}} 
             </form>
@@ -22,6 +22,7 @@
         </b><br>
         <u>Buy in cost:</u> {{product.buy_cost}} Credits<br>
         <u>Selling price:</u> {{product.sell_cost}} Credits<br>
+        <u>Mark up:</u>{% print"{:.2f}".format((product.sell_cost/product.buy_cost)*100) %}%<br>
         <div class="button-box">
             <form action="/products/{{product.id}}">
                 <button class="button">DETAILS</button>
