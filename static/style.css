@@ -32,8 +32,18 @@ body {
     padding: 5px;
     border-radius: 5%;
 }
+.container > div > form > div {
+    gap: 10px;
+}
 
 body > footer {
+    text-align: center;
+    padding: 1em;
+    font-size: 3em;
+    font-style: italic;
+}
+
+body > u > footer {
     text-align: center;
     padding: 1em;
     font-size: 3em;

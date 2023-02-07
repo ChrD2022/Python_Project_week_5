@@ -16,13 +16,13 @@
             </form>
             {% if product.in_stock == 0 %} 
                 <i class="stock" style="color:red">OUT OF STOCK!!!</i>
-            {% elif product.in_stock <= 20 %}
+            {% elif product.in_stock <= 24 %}
                 <i class="stock" style="color:goldenrod">LOW STOCK!!!</i>
             {% endif %}
         </b><br>
         <u>Buy in cost:</u> {{product.buy_cost}} Credits<br>
         <u>Selling price:</u> {{product.sell_cost}} Credits<br>
-        <u>Mark up:</u>{% print"{:.2f}".format((product.sell_cost/product.buy_cost)*100) %}%<br>
+        <u>Mark up:</u> {% print"{:.0f}".format((product.sell_cost/product.buy_cost)*100) %}%<br>
         <div class="button-box">
             <form action="/products/{{product.id}}">
                 <button class="button">DETAILS</button>

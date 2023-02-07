@@ -5,27 +5,27 @@
     <div>
     <form action="/products" method="post">
         <div>
-            <label for="product_name"><u>Product Name:</u></label>
+            <label for="product_name"><u>Product Name:</u></label><br>
             <input type="text" id="product_name" name="product_name" placeholder="Product Name" required autofocus>
         </div>
         <div>
-            <label for="product_description"><u>Product Description:</u></label>
-            <input type="text" id="product_description" name="product_description" placeholder="Product Description" required>
+            <label for="product_description"><u>Product Description:</u></label><br>
+            <textarea type="text" id="product_description" name="product_description" placeholder="Product Description" cols="30" rows="10" required></textarea>
         </div>
         <div>
-            <label for="in_stock"><u>Stock Level:</u></label>
+            <label for="in_stock"><u>Stock Level:</u></label><br>
             <input type="number" id="in_stock" name="in_stock" placeholder="Stock Level" required>
         </div>
         <div>
-            <label for="buy_cost"><u>Buy Cost:</u></label>
+            <label for="buy_cost"><u>Buy Cost:</u></label><br>
             <input type="number" id="buy_cost" name="buy_cost" placeholder="Buy Cost" required>
         </div>
         <div>
-            <label for="sell_cost"><u>Sell Price:</u></label>
+            <label for="sell_cost"><u>Sell Price:</u></label><br>
             <input type="number" id="sell_cost" name="sell_cost" placeholder="Sell Cost" required>
         </div>
         <div>
-            <label for="manufacturer"><u>Manufacturer:</u></label>
+            <label for="manufacturer"><u>Manufacturer:</u></label><br>
             <select id="manufacturer" name="manufacturer_id">
             {% for manufacturer in all_manufacturers %}
                 <option value="{{manufacturer.id}}">{{manufacturer.manufacturer_name}}</option>
