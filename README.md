@@ -28,3 +28,8 @@ Run following commands:
 5) flask run
 
 How to operate
+the Home page is a simple landing page to remind you who's boss! See the nav bar.
+Products: is a display of all current products with information and the ability to edit or delete
+Add New Product: use to create a new product
+Manufacturers: is a display of all current manufacturers with information and the ability to edit or delete
+Add New Manufacturer: use to create a new manufacturer
